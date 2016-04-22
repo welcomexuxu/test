@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		padding:0;
+		margin:0;
+		list-style:none;
+	}
+	/*.box{
+		height: 300px;
+		width:500px;
+		margin:0 auto;
+		border: 1px solid red;
+	}*/
+	.con{
+		width:1200px;
+		margin:0 auto;
+	}
+	.con li{
+		height: 600px;
+	}
+	.con li:first-child{background: red;}
+	.con li:nth-child(2){background: yellow;}
+	.con li:nth-child(3){background: pink;}
+	.con li:nth-child(4){background: black;}
+	.con li:nth-child(5){background: #ccc;}
+	.con li:nth-child(6){background: blue;}
+	.con li:nth-child(7){background: green;}
+	.con li:nth-child(8){background: #000;}
+	.con li:nth-child(9){background: red;}
+	.con li:nth-child(10){background: yellow;}
+	.con li:nth-child(11){background: blue;}
+	.box1{
+		position: fixed;
+		left:10px;
+		top:160px;
+		display: none;
+	}
+	.box1 li{
+		background: url(xz.png) 0 0 no-repeat;
+		height: 30px;
+		width:30px;
+		font-size: 14px;
+		position: relative;
+		text-align:center;
+		line-height: 30px;
+	}
+	.box1 li:first-child{
+		background: none;
+	}
+	.box1 li span{
+		height: 29px;
+		line-height: 29px;
+		position:absolute;
+		left:0;
+		top:0;
+		display: none;
+		font-size: 12px;
+	}
+	.box1 li.over span{
+		display:block;
+		background: #fff;
+		color:red;
+	}
+	.box1 li:hover span{
+		display:block;
+		background: #fff;
+		color:red;
+	}
+
+</style>
+<body>
+	<!-- <div class="box"></div> -->
+	<ul class="con">
+		<li>服装</li>
+		<li>美妆</li>
+		<li>手机</li>
+		<li>家电</li>
+		<li>数码</li>
+		<li>运动</li>
+		<li>居家</li>
+		<li>母婴</li>
+		<li>食品</li>
+		<li>图书</li>
+		<li>服务</li>
+	</ul>
+	<ul class="box1">
+		<li class="hover">1F<span>服饰</span></li>
+		<li>2F<span>美妆</span></li>
+		<li>3F<span>手机</span></li>
+		<li>4F<span>家电</span></li>
+		<li>5F<span>数码</span></li>
+		<li>6F<span>运动</span></li>
+		<li>7F<span>居家</span></li>
+		<li>8F<span>母婴</span></li>
+		<li>9F<span>食品</span></li>
+		<li>10F<span>图书</span></li>
+		<li>11F<span>服务</span></li>
+	</ul>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+	// $(function(){
+	// 	var a=$('.box');
+	// 	var off=a.offset();
+	// 	a.html('left:'+off.left+',top:'+off.top)
+	// })
+	
+	$(function(){
+		// var k=1;
+		$(window).scroll(function(){
+			// if(k==1){
+
+
+				var s=$(window).scrollTop();
+				// console.log(s);
+				if(s>300){
+					$('.box1').css('display','block')
+				}else{
+					$('.box1').css('display','none')
+				}
+				$('.con li').each(function(){
+					// console.log(s);
+					// var i=a;
+					var i=$(this).index();
+					// var arr=[];
+					// var i=$('.box1 li').index(this);
+					// arr.push(i);
+					console.log(i)
+					var off=$('.con li').eq(i).offset().top;
+					if(off>s){
+						$('.box1 li').eq(i).addClass('over').siblings().removeClass('over');
+						return false;
+					}
+				})
+			// }
+		})
+		$('.box1 li').click(function(){
+			// k=2;
+			
+			var _index=$('.box1 li').index(this);
+			// $('.box1 li').eq(_index-1).addClass('over').siblings().removeClass('over');
+			var top=$('.con li').eq(_index).offset().top;
+			$('html,body').animate({scrollTop:top},500)
+		})
+	})
+</script>
+</html>
