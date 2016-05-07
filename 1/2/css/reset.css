@@ -1,0 +1,112 @@
+@charset "utf-8";
+/*=========================Reset_start==========================*/
+body,h1,h2,h3,h4,h5,h6,div,p,dl,dt,dd,ol,ul,li,form,table,th,td,a,img,span,strong,var,em,input,textarea,select,option{margin: 0; padding: 0;}
+html,body{font-family:"微软雅黑","宋体",Arail,Tabhoma; font-size: 12px; text-align: left;}
+ul,ol{list-style: none;}
+img{border: 0;}
+input,select,textarea{outline:0;}
+textarea{resize:none;}
+table{border-collapse: collapse; border-spacing: 0;}
+th,strong,var,em{font-weight: normal; font-style: normal;}
+a{text-decoration: none;}
+/*a:link,a:visited,a:hover,a:active{text-decoration:none;} */
+/*==========================Reset_End===========================*/
+/*==========================公共样式===========================*/
+/*==========================head_start===========================*/
+.wrap{
+	width:100%;
+	height: 100%;
+	min-width:1100px;
+	max-width: 1920px;
+}
+/*==========================head_end===========================*/
+
+
+/*==========================footer_start===========================*/
+.footer1{
+	width:100%;
+	background: #333333;
+	padding-top: 60px;
+}
+.footer{
+	width:1100px;
+	margin:0 auto;
+}
+.footer .li,.li2{
+	overflow: hidden;
+}
+.footer .li ul{
+	float: left;
+}
+.footer .li ul a,.li3{
+	color:#9c9e9e;
+	font-size: 14px;
+}
+.footer .li ul a:hover{
+	color:#fff;
+}
+.li1 li,.li2 li{
+	float: left;
+}
+.li4 ul{
+	padding-right: 40px;
+	background: url(../images/lan.jpg) right 30px no-repeat;
+}
+.li4 li{
+	padding-left: 23px;
+	background: url(../images/gt.jpg) 0 8px no-repeat;
+	line-height: 25px;
+}
+.li4 .wu{
+	background: none;
+	font-size: 16px;
+	color: #fff;
+	font-weight: bold;
+	padding-left: 0px;
+	margin-bottom:10px;
+}
+.li4 .wu1{
+	padding-left: 30px;
+	padding-right: 0px;
+	background: none;
+}
+.li4 .wu3{
+	padding-left:0px;
+	background: none;
+	padding-right: 20px;
+}
+.li4 .wu2{
+	padding-right: 25px;
+}
+.li4 .wu4{
+	padding-right: 30px;
+	padding-left: 20px;
+}
+.li4 .wu5{
+	padding-right: 0px;
+	overflow: hidden;
+	padding-left: 20px;
+}
+.li4 .wu5 li img{
+	float: left;
+	width:116px;
+	height: 122px;
+}
+.li4 .wu5 li{
+	background: none;
+	padding-left: 0px;
+}
+.footer .li3{
+	margin:25px 0 10px 11px;
+}
+.footer .li .li2 a{
+	font-size: 12px;
+	margin-left: 11px;
+}
+.footer .li5{
+	text-align: center;
+	margin-top:20px;
+	padding-bottom: 42px;
+	color:#9c9e9e;
+}
+/*==========================footer_end===========================*/
